@@ -4,33 +4,44 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
     <h1>Coffee!</h1>
 
-    <form>
-        <label for="roast-selection"></label>
-        <select id="roast-selection">
-            <option>all</option>
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
-        </select>
-        <input id="submit" type="submit" />
-    </form>
 
 <!--TODO: Convert tables to divs. The coffee name should be a header. Roast type will be in a paragraph tag Don't display the ids.-->
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>NAME</th>
-                <th>ROAST</th>
-            </tr>
-        </thead>
-        <tbody id="coffees"></tbody>
-    </table>
+<!--    <table>-->
+<!--        <thead>-->
+<!--            <tr>-->
+<!--                <th>ID</th>-->
+<!--                <th>NAME</th>-->
+<!--                <th>ROAST</th>-->
+<!--            </tr>-->
+<!--        </thead>-->
+<!--        <tbody id="coffees"></tbody>-->
+<!--    </table>-->
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="d-flex flex-wrap" id="coffeeDiv">
 
+                </div>
+            </div>
+            <div class="col-6">
+                <form>
+                    <label for="roast-selection"></label>
+                    <select class="form-select"  id="roast-selection">
+                        <option selected>all</option>
+                        <option>light</option>
+                        <option>medium</option>
+                        <option>dark</option>
+                    </select>
+                    <input class="btn btn-primary"id="submit" type="submit" />
+                </form>
+            </div>
+        </div>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>

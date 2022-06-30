@@ -2,11 +2,8 @@
 
 // Creating the table with all the coffee objects
 function renderCoffee(coffee) {
-    var html = '<tr class="coffee">';
-    html += '<td>' + coffee.id + '</td>';
-    html += '<td>' + coffee.name + '</td>';
-    html += '<td>' + coffee.roast + '</td>';
-    html += '</tr>';
+    var html = '<h1>' + coffee.name + '</h1>';
+    html += '<p>' + coffee.roast + '</p>';
 
     return html;
 }
@@ -30,10 +27,10 @@ function updateCoffees(e) {
             filteredCoffees.push(coffee);
         }
     });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
+    coffeeDiv.innerHTML = renderCoffees(filteredCoffees);
 
     if(selectedRoast === 'all') {
-        tbody.innerHTML = renderCoffees(coffees)
+        coffeeDiv.innerHTML = renderCoffees(coffees)
     }
 }
 
@@ -65,10 +62,10 @@ var coffees = [
 // TODO:Add functionality to update the displayed coffee as the user types into the search box, or as soon as they select an option from the select.
 
 
-var tbody = document.querySelector('#coffees');
+var coffeeDiv = document.querySelector('#coffeeDiv');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
 
-tbody.innerHTML = renderCoffees(coffees);
+coffeeDiv.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
