@@ -1,5 +1,6 @@
 "use strict"
 
+// Creating the table with all the coffee objects
 function renderCoffee(coffee) {
     var html = '<tr class="coffee">';
     html += '<td>' + coffee.id + '</td>';
@@ -10,6 +11,7 @@ function renderCoffee(coffee) {
     return html;
 }
 
+// For loops through coffees array, and prints each coffee object into table
 function renderCoffees(coffees) {
     var html = '';
     for(var i = coffees.length - 1; i >= 0; i--) {
@@ -18,6 +20,7 @@ function renderCoffees(coffees) {
     return html;
 }
 
+// Sorts coffees by roast, when you hit submit button
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
@@ -28,6 +31,10 @@ function updateCoffees(e) {
         }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
+
+    if(selectedRoast === 'all') {
+        tbody.innerHTML = renderCoffees(coffees)
+    }
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -47,6 +54,16 @@ var coffees = [
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'},
 ];
+
+//TODO: When the page is loaded, the coffees should be printed by lowest id to highest id
+//ex... ID 0
+//      ID 1
+//      ID 2
+
+//TODO: Add functionality to search through the coffees by name, and display only the coffees that match the provided search term (You will need to add an input field to the existing form for this)
+
+// TODO:Add functionality to update the displayed coffee as the user types into the search box, or as soon as they select an option from the select.
+
 
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
