@@ -10,24 +10,17 @@
     <h1>Coffee!</h1>
 
 
-<!--TODO: Convert tables to divs. The coffee name should be a header. Roast type will be in a paragraph tag Don't display the ids.-->
-<!--    <table>-->
-<!--        <thead>-->
-<!--            <tr>-->
-<!--                <th>ID</th>-->
-<!--                <th>NAME</th>-->
-<!--                <th>ROAST</th>-->
-<!--            </tr>-->
-<!--        </thead>-->
-<!--        <tbody id="coffees"></tbody>-->
-<!--    </table>-->
-    <div class="container">
+<!--DONE: Convert tables to divs. The coffee name should be a header. Roast type will be in a paragraph tag Don't display the ids.-->
+    <div class="container-flex">
         <div class="row">
             <div class="col-6">
-                <div class="d-flex flex-wrap" id="coffeeDiv">
+
+                <div class="d-flex flex-column flex-wrap justify-content-evenly align-items-center" id="coffeeDiv">
 
                 </div>
+
             </div>
+
             <div class="col-6">
                 <form>
                     <label for="roast-selection"></label>
@@ -42,6 +35,7 @@
             </div>
         </div>
     </div>
+
     <script src="main.js"></script>
 </body>
 </html>

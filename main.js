@@ -2,9 +2,10 @@
 
 // Creating the table with all the coffee objects
 function renderCoffee(coffee) {
-    var html = '<h1>' + coffee.name + '</h1>';
+    var html = '<div class="justify-content-between d-flex align-items-end flex-wrap">'
+    html += '<h1>' + coffee.name + '</h1>';
     html += '<p>' + coffee.roast + '</p>';
-
+    html += '</div>'
     return html;
 }
 
