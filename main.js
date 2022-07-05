@@ -40,7 +40,7 @@ function coffeeSearch(e) {
     var coffeeSearchTerm = coffeeQuery.value.toLowerCase();
     var filteredCoffees = []
     coffees.forEach(function(coffee){
-        if (coffee.name.toLowerCase() === coffeeSearchTerm.toLowerCase()){
+        if (coffee.name.toLowerCase().includes(coffeeSearchTerm)){
             filteredCoffees.push(coffee)
         }
     })
@@ -75,8 +75,6 @@ var coffees = [
 //  types into the search box, or as soon as they select an option from the select.
 
 
-
-
 var coffeeDiv = document.querySelector('#coffeeDiv');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
@@ -85,5 +83,7 @@ var coffeeQuery= document.querySelector('#coffee-search')
 coffeeDiv.innerHTML = renderCoffees(coffees.reverse());
 
 submitButton.addEventListener('click', updateCoffees);
-submitButton.addEventListener('click', coffeeSearch);
+
+coffeeQuery.addEventListener('input', coffeeSearch);
+
 
