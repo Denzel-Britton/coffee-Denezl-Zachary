@@ -35,6 +35,18 @@ function updateCoffees(e) {
     }
 }
 
+function coffeeSearch(e) {
+    e.preventDefault();
+    var coffeeSearchTerm = coffeeQuery.value.toLowerCase();
+    var filteredCoffees = []
+    coffees.forEach(function(coffee){
+        if (coffee.name.toLowerCase() === coffeeSearchTerm.toLowerCase()){
+            filteredCoffees.push(coffee)
+        }
+    })
+    coffeeDiv.innerHTML = renderCoffees(filteredCoffees)
+}
+
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
@@ -53,22 +65,25 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
-//TODO: When the page is loaded, the coffees should be printed by lowest id to highest id
-//ex... ID 0
-//      ID 1
-//      ID 2
+//DONE: When the page is loaded, the coffees should be printed by lowest id to highest id
 
-//TODO: Add functionality to search through the coffees by name, and display only the
+//DONE: Add functionality to search through the coffees by name, and display only the
 // coffees that match the provided search term (You will need to add an input field to the existing form for this)
+
 
 // TODO:Add functionality to update the displayed coffee as the user
 //  types into the search box, or as soon as they select an option from the select.
 
 
+
+
 var coffeeDiv = document.querySelector('#coffeeDiv');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
+var coffeeQuery= document.querySelector('#coffee-search')
 
-coffeeDiv.innerHTML = renderCoffees(coffees);
+coffeeDiv.innerHTML = renderCoffees(coffees.reverse());
 
 submitButton.addEventListener('click', updateCoffees);
+submitButton.addEventListener('click', coffeeSearch);
+
