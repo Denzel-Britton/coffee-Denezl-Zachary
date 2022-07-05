@@ -58,9 +58,11 @@ var coffees = [
 //      ID 1
 //      ID 2
 
-//TODO: Add functionality to search through the coffees by name, and display only the coffees that match the provided search term (You will need to add an input field to the existing form for this)
+//TODO: Add functionality to search through the coffees by name, and display only the
+// coffees that match the provided search term (You will need to add an input field to the existing form for this)
 
-// TODO:Add functionality to update the displayed coffee as the user types into the search box, or as soon as they select an option from the select.
+// TODO:Add functionality to update the displayed coffee as the user
+//  types into the search box, or as soon as they select an option from the select.
 
 
 var coffeeDiv = document.querySelector('#coffeeDiv');
